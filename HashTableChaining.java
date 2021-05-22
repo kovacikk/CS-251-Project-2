@@ -1,6 +1,14 @@
 import java.util.ArrayList; 
 import java.util.LinkedList;
 
+/**
+ * 
+ * Kyle Kovacik
+ * Implementation of a HashTable using an ArrayList of LinkedLists (Chaining)
+ * 
+ */
+
+
 class Pair<K,V> 
 {
     /*
@@ -42,6 +50,7 @@ public class HashTableChaining<K,V>
             list.add(ll);
         }
     }
+
     public void insert(String key, int val)
     {
         /*
@@ -59,12 +68,13 @@ public class HashTableChaining<K,V>
                 rehash();
         }
     }
+
     public void remove(String key)
     {
         /*
         Remove key from the hashtable if it is present in the hashtable.
         */
-        if (!contains(key)){ //probably not necessary
+        if (!contains(key)){ 
             return;
         }
         int hashvalue = hash(key);
@@ -77,6 +87,7 @@ public class HashTableChaining<K,V>
             }
         }
     }
+
     public boolean contains(String key)
     {
         /* 

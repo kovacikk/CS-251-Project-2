@@ -1,3 +1,11 @@
+/**
+ * 
+ * Kyle Kovacik
+ * Implementation of Hash Table using Quadratic Probing
+ * 
+ */
+
+
 /* Quadratic Probing */
 	public class QuadraticProbing<AnyType>
 	{
@@ -100,12 +108,9 @@
 
 		array[result] = new HashEntry<>(x, true);
 		elementsSize++;
-		//System.out.println("Inserted " + x.toString() + "to index " + result);
 
 		if (((double) elementsSize / (double) this.size) >= 0.4) {
-			//System.out.println("Re-Sizing!!!!!!!!");
 			rehash();
-			printTest(); // Remember to take this out
 		}
 	}
 
@@ -126,7 +131,6 @@
 				result = (hashVal + (int) Math.pow(i,2)) % this.size;
 			}
 			i++;
-			//System.out.println("Deleted " + x.toString() + "from index " + result);
 		}
 		elementsSize--;
    	}
@@ -186,13 +190,7 @@
 	public int probe(AnyType x) // check
 	{
 		/* Return the number of probes encountered for a key */
-		/** int hashVal = hash(x.toString(), size);
-
-		int result = hashVal;
-		for (num_of_probes = 1; array[result] == null; num_of_probes++) {
-			result = (hashVal + (int) Math.pow(num_of_probes, 2)) % this.size;
-		}
-		*/
+	
 
 		int hashVal = hash(x.toString(), size);
 		int result = hashVal;
